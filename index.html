@@ -3,14 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MirCountries — достопримечательности мира на 3D-глобусе</title>
-<meta name="description" content="MirCountries: короткие кинематографические фильмы о главных достопримечательностях мира. Облёт с дрона, тур по интерьеру и рассказ гида на нескольких языках. Interactive 3D globe of world landmarks.">
+<title>MirCountries — достопримечательности мира в кинематографичных фильмах</title>
+<meta name="description" content="MirCountries: кинематографичные фильмы о 100 главных святынях и достопримечательностях мира. Облёт с дрона, тур по интерьеру и рассказ гида на нескольких языках. Интерактивный 3D-глобус, отели и экскурсии рядом.">
+<meta name="keywords" content="достопримечательности мира, святыни мира, храмы мира, соборы, мечети, путешествия, что посмотреть, 3D глобус, MirCountries, world landmarks, sacred sites">
+<meta name="theme-color" content="#050816">
 <link rel="canonical" href="https://www.mircountries.com/">
-<meta property="og:title" content="MirCountries — достопримечательности мира на 3D-глобусе">
-<meta property="og:description" content="Кинематографические фильмы о главных достопримечательностях мира: дрон снаружи, тур внутри, рассказ гида.">
+<meta property="og:site_name" content="MirCountries">
+<meta property="og:title" content="MirCountries — достопримечательности мира">
+<meta property="og:description" content="Кинематографичные фильмы о главных святынях мира: дрон снаружи, тур внутри, рассказ гида. Интерактивный 3D-глобус.">
 <meta property="og:url" content="https://www.mircountries.com/">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/playfair-display-cyrillic-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffe3a3'/%3E%3Cstop offset='.6' stop-color='%23ff9d3d'/%3E%3Cstop offset='1' stop-color='%23ff5d8f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='%23050816' stroke='url(%23g)' stroke-width='3'/%3E%3Cpath d='M4 16h24M16 2c5 4 5 24 0 28M16 2c-5 4-5 24 0 28' fill='none' stroke='url(%23g)' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","name":"MirCountries","url":"https://www.mircountries.com/","email":"mircountries@gmail.com",
+  "sameAs":["https://www.youtube.com/@MirCountries","https://www.tiktok.com/@mircountries","https://www.instagram.com/mircountries","https://www.facebook.com/profile.php?id=61595357645916"]},
+ {"@type":"WebSite","name":"MirCountries","url":"https://www.mircountries.com/","inLanguage":["ru","en"]}
+]}
+</script>
 <!-- Travelpayouts Drive (marker 589223) -->
 <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
   (function () {
@@ -23,152 +38,414 @@
 </script>
 </head>
 <body>
+<div class="cosmos" aria-hidden="true"></div>
+
 <header class="top"><div class="wrap">
-  <a class="logo" href="/">Mir<span>Countries</span></a>
-  <nav><a href="#objects">Объекты</a><a class="opt" href="#about">О проекте</a><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a></nav>
+  <a class="logo" href="/" aria-label="MirCountries — на главную">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe3a3"/><stop offset=".6" stop-color="#ff9d3d"/><stop offset="1" stop-color="#ff5d8f"/></linearGradient></defs><circle cx="16" cy="16" r="13.5" fill="none" stroke="url(#lg)" stroke-width="2.5"/><path d="M3 16h26M16 3c5.5 4 5.5 22 0 26M16 3c-5.5 4-5.5 22 0 26" fill="none" stroke="url(#lg)" stroke-width="1.8"/></svg><span style="background:none;color:var(--text)">Mir</span><span>Countries</span>
+  </a>
+  <nav aria-label="Основное меню">
+    <a href="#films">Фильмы</a>
+    <a href="#traditions" class="opt">Традиции</a>
+    <a href="#objects">Объекты</a>
+    <a href="#travel" class="opt">Путешествия</a>
+    <a class="btn primary sm" href="https://www.youtube.com/@MirCountries?sub_confirmation=1" target="_blank" rel="noopener">Подписаться</a>
+  </nav>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <div>
-      <h1>Достопримечательности <b>мира</b></h1>
-      <p>Короткие кинематографические фильмы: облёт с дрона снаружи, тур по интерьеру и рассказ гида. Вращайте глобус и нажмите на точку, чтобы открыть объект.</p>
-      <p style="font-size:15px">Short cinematic films about the world's most important landmarks and sacred sites — drone flight, interior tour and a narrated guide in several languages.</p>
-      <div class="stats">
-        <div class="stat"><b id="sTotal">0</b><span>объектов на карте</span></div>
-        <div class="stat"><b id="sDone">0</b><span>фильмов готово</span></div>
-        <div class="stat"><b id="sCountries">0</b><span>стран</span></div>
+<main>
+  <section class="hero">
+    <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow"><span class="dot"></span>Новый фильм — каждый день</span>
+        <h1>Достопримечательности <span class="gr">мира</span></h1>
+        <p class="lead">Кинематографичные фильмы о 100 величайших святынях планеты: облёт с дрона, путь внутрь и рассказ гида. Вращайте глобус — каждая точка открывает историю.</p>
+        <div class="cta">
+          <a class="btn primary" href="#films"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Смотреть фильмы</a>
+          <a class="btn" href="#objects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Все 100 объектов</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b data-count id="sTotal">0</b><span>святынь на карте</span></div>
+          <div class="stat"><b data-count id="sCountries">0</b><span>стран мира</span></div>
+          <div class="stat"><b data-count id="sFaiths">0</b><span>религиозных традиций</span></div>
+          <div class="stat"><b data-count id="sDone">0</b><span>фильмов уже вышло</span></div>
+        </div>
       </div>
-      <div class="btns">
-        <a class="primary" href="https://www.youtube.com/@MirCountries" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.tiktok.com/@mircountries" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://www.instagram.com/mircountries" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.facebook.com/profile.php?id=61595357645916" target="_blank" rel="noopener">Facebook</a>
+      <div class="globe-box reveal">
+        <div id="globe" role="img" aria-label="Интерактивный 3D-глобус со святынями мира"></div>
+        <div class="globe-legend"><span><i style="background:#ffc65c;box-shadow:0 0 10px #ffc65c"></i>фильм вышел</span><span><i style="background:linear-gradient(90deg,#8b7bff,#2ee6a6,#ff5d8f)"></i>скоро · цвет = традиция</span></div>
       </div>
     </div>
-    <div>
-      <div id="globe" role="img" aria-label="3D-глобус с достопримечательностями"></div>
-      <div class="hint">🟠 фильм готов · 🔴 скоро · перетаскивайте и приближайте колесом мыши</div>
-    </div>
-  </div>
-
-  <section id="objects">
-    <h2>Все объекты</h2>
-    <p class="sub">Поиск по названию, стране или городу.</p>
-    <div class="filters">
-      <input id="q" type="search" placeholder="Например: Париж, мечеть, Индия…">
-      <select id="country"><option value="">Все страны</option></select>
-      <select id="status"><option value="">Все</option><option value="DONE">Фильм готов</option><option value="SOON">Скоро</option></select>
-    </div>
-    <div class="grid" id="grid"></div>
+    <div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
   </section>
 
-  <section id="about">
-    <div class="about">
-      <h2>MirCountries Publisher — about this app</h2>
-      <p>MirCountries Publisher is the internal publishing app of the MirCountries project. MirCountries creates short cinematic films about the world's most important landmarks, sacred sites and cultural heritage (exterior drone flight, interior tour and narration in several languages).</p>
-      <p>What the app does: after our automation (n8n Cloud) produces a video, MirCountries Publisher uploads it to our own YouTube channel @MirCountries using the YouTube Data API (permission "youtube.upload" only), together with the title, description, language and privacy setting. The app also publishes the same videos to our own TikTok account @mircountries.</p>
-      <p>Who uses it: only the owner of the MirCountries channels. The app is not offered to the public, has no other users and does not access, read or store any data of other people.</p>
-      <p>Privacy Policy: <a href="/privacy-policy">www.mircountries.com/privacy-policy</a> · Terms of Service: <a href="/terms-of-service">www.mircountries.com/terms-of-service</a> · Contact: <a href="mailto:mircountries@gmail.com">mircountries@gmail.com</a></p>
-      <p style="color:var(--muted)">MirCountries Publisher — внутреннее приложение проекта MirCountries: загружает наши собственные ролики о достопримечательностях на наш канал YouTube @MirCountries и в TikTok @mircountries. Приложением пользуется только владелец каналов; данные других людей не собираются.</p>
+  <section class="block" id="films">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div>
+          <span class="kicker">Премьеры</span>
+          <h2 class="title">Фильмы, которые <em>уже вышли</em></h2>
+          <p class="sub">Каждый фильм — три ролика: два по 25 секунд и полная версия на 50 секунд. На русском и английском.</p>
+        </div>
+        <a class="btn" href="https://www.youtube.com/@MirCountries/shorts" target="_blank" rel="noopener">Все ролики на YouTube →</a>
+      </div>
+      <div class="films reveal" id="films-grid"></div>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">Как мы снимаем</span>
+        <h2 class="title">Три кадра — <em>одна история</em></h2>
+        <p class="sub">Каждый фильм построен как настоящий визит: вы подлетаете, входите внутрь и слышите гида.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal" style="--c:#38e1ff"><span class="n">01</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3"/><rect x="9.5" y="9.5" width="5" height="5" rx="1.2"/></svg></div><h3>Облёт с дрона</h3><p>Кинематографичный полёт вокруг святыни: масштаб, архитектура и место на карте мира.</p></div>
+        <div class="step reveal" style="--c:#ffc65c"><span class="n">02</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 21V10a8 8 0 0 1 16 0v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/><path d="M2 21h20"/></svg></div><h3>Путь внутрь</h3><p>Камера переступает порог: своды, купола, росписи и главная святыня — так, как её видят паломники.</p></div>
+        <div class="step reveal" style="--c:#ff5d8f"><span class="n">03</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></div><h3>Рассказ гида</h3><p>Только достоверные факты, живая озвучка на русском и английском, скоро — ещё на 4 языках.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="traditions">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">Мир веры</span>
+        <h2 class="title">Святыни <em>всех традиций</em></h2>
+        <p class="sub">Соборы и мечети, синагоги, буддийские ступы и индуистские храмы. Выберите традицию — каталог ниже покажет её святыни.</p>
+      </div>
+      <div class="faiths reveal" id="faiths"></div>
+    </div>
+  </section>
+
+  <section class="block" id="objects">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">Каталог</span>
+        <h2 class="title">100 святынь — <em>одна карта</em></h2>
+        <p class="sub">Ищите по названию, стране или городу. Нажмите на карточку — откроется фильм, факты, отели и экскурсии рядом.</p>
+      </div>
+      <div class="toolbar reveal">
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Париж, мечеть, Индия…" aria-label="Поиск по объектам"></label>
+        <select id="region" aria-label="Регион"><option value="">Все регионы</option></select>
+        <div class="seg" role="group" aria-label="Статус">
+          <button type="button" data-status="" aria-pressed="true">Все</button>
+          <button type="button" data-status="DONE" aria-pressed="false">Фильм вышел</button>
+          <button type="button" data-status="SOON" aria-pressed="false">Скоро</button>
+        </div>
+      </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+      <div class="more"><button class="btn" id="moreBtn" type="button">Показать ещё</button></div>
+    </div>
+  </section>
+
+  <section class="block" id="travel">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">Путешествия</span>
+        <h2 class="title">Увидеть <em>своими глазами</em></h2>
+        <p class="sub">Выберите святыню в каталоге — в её карточке есть отели и экскурсии рядом. Или начните поиск здесь.</p>
+      </div>
+      <div class="travel">
+        <a class="tcard h reveal" href="https://www.trip.com/hotels/" target="_blank" rel="sponsored noopener">
+          <svg class="big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20V8l9-4 9 4v12"/><path d="M8 20v-5h8v5M8 10h.01M12 10h.01M16 10h.01"/><path d="M1 20h22"/></svg>
+          <h3>Отели рядом</h3><p>Проживание в шаге от святынь — от уютных гостевых домов до гранд-отелей.</p><span class="btn primary">Найти отель →</span>
+        </a>
+        <a class="tcard e reveal" href="https://www.getyourguide.com/" target="_blank" rel="sponsored noopener">
+          <svg class="big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 0 0-6V6H3z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg>
+          <h3>Экскурсии с гидом</h3><p>Билеты без очереди, ночные туры и маршруты с местными гидами.</p><span class="btn primary">Выбрать экскурсию →</span>
+        </a>
+      </div>
+      <p class="note">Партнёрские ссылки: при бронировании проект получает комиссию, для вас цена не меняется.</p>
+
+      <div class="subscribe reveal">
+        <span class="kicker">Каждый день — новая святыня</span>
+        <h2>Совершите кругосветное путешествие <br>не выходя из дома</h2>
+        <p>Подпишитесь, чтобы не пропустить премьеры. 100 святынь, более 40 стран, новый фильм каждый день.</p>
+        <div class="socials">
+          <a class="soc yt" href="https://www.youtube.com/@MirCountries?sub_confirmation=1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.4-1.6.5-4.8.5-4.8s0-3.2-.5-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg>YouTube</a>
+          <a class="soc tt" href="https://www.tiktok.com/@mircountries" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.4 6.4 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.6 1.5V6.7a4.7 4.7 0 0 1-4.6-4.7z"/></svg>TikTok</a>
+          <a class="soc ig" href="https://www.instagram.com/mircountries" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>Instagram</a>
+          <a class="soc fb" href="https://www.facebook.com/profile.php?id=61595357645916" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2h-2.6C11.3 2 10.5 3.9 10.5 6.1V8H8v3h2.5v11H14V11h2.7l.4-3z"/></svg>Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap about">
+      <div class="box reveal">
+        <h3>О проекте MirCountries</h3>
+        <p>MirCountries — проект о культурном наследии человечества. Мы создаём короткие кинематографичные фильмы о главных святынях и достопримечательностях мира: облёт с дрона, тур по интерьеру и рассказ гида на нескольких языках.</p>
+        <p>Цель — за 100 дней показать 100 мест, которые стоит увидеть хотя бы раз в жизни, и помочь спланировать путешествие к ним.</p>
+        <p>Связь: <a href="mailto:mircountries@gmail.com">mircountries@gmail.com</a></p>
+      </div>
+      <div class="box reveal">
+        <h3>MirCountries Publisher — about this app</h3>
+        <p>MirCountries Publisher is the internal publishing app of the MirCountries project. After our automation (n8n Cloud) produces a video, MirCountries Publisher uploads it to our own YouTube channel @MirCountries using the YouTube Data API (permission "youtube.upload" only), together with the title, description, language and privacy setting. The app also publishes the same videos to our own TikTok account @mircountries.</p>
+        <p>Who uses it: only the owner of the MirCountries channels. The app is not offered to the public, has no other users and does not access, read or store any data of other people.</p>
+        <p><a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms of Service</a> · <a href="mailto:mircountries@gmail.com">mircountries@gmail.com</a></p>
+      </div>
     </div>
   </section>
 </main>
 
-<aside class="panel" id="panel" aria-live="polite">
-  <button class="close" aria-label="Закрыть" onclick="closePanel()">×</button>
-  <div id="panelBody"></div>
-</aside>
-
 <footer><div class="wrap">
-  © MirCountries · <a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="mailto:mircountries@gmail.com">mircountries@gmail.com</a>
+  <span>© 2026 MirCountries · Святыни и достопримечательности мира</span>
+  <nav><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="mailto:mircountries@gmail.com">mircountries@gmail.com</a></nav>
 </div></footer>
+
+<dialog class="modal" id="modal" aria-labelledby="mTitle">
+  <button class="mclose" type="button" aria-label="Закрыть" onclick="closeModal()">×</button>
+  <div class="mbox" id="mbox"></div>
+</dialog>
 
 <script src="/objects.js"></script>
 <script src="/assets/globe.gl.min.js"></script>
 <script>
-const items = (window.MC_OBJECTS || []).map((r, i) => ({
-  i, name: r[0], country: r[1], city: r[2], lat: r[3], lng: r[4], done: r[5] === 'DONE', yt: r[6] || ''
-}));
-const short = n => n.split(' — ')[0];
+// ---------- Данные ----------
+const FAITHS = {
+  christian: { label: 'Христианство', c: '#8b7bff', g: 'linear-gradient(150deg,#7b6cff,#2a1f7a 60%,#120e3a)', glyph: 'church' },
+  islam:     { label: 'Ислам',        c: '#2ee6a6', g: 'linear-gradient(150deg,#1fd197,#0b5d4a 60%,#062b25)', glyph: 'mosque' },
+  judaism:   { label: 'Иудаизм',      c: '#4d8dff', g: 'linear-gradient(150deg,#4d8dff,#173c8f 60%,#0b1a45)', glyph: 'star' },
+  buddhism:  { label: 'Буддизм',      c: '#ffb02e', g: 'linear-gradient(150deg,#ffb02e,#9a4a0f 60%,#3d1806)', glyph: 'stupa' },
+  hinduism:  { label: 'Индуизм',      c: '#ff5d8f', g: 'linear-gradient(150deg,#ff5d8f,#8f1d4a 60%,#3a0a1f)', glyph: 'shikhara' },
+  shinto:    { label: 'Синтоизм',     c: '#ff6a4d', g: 'linear-gradient(150deg,#ff6a4d,#8f1f17 60%,#3a0b08)', glyph: 'torii' },
+  sikh:      { label: 'Сикхизм',      c: '#ffd84d', g: 'linear-gradient(150deg,#ffd84d,#a07a10 60%,#3d2c05)', glyph: 'dome' },
+  bahai:     { label: 'Бахаи',        c: '#c38bff', g: 'linear-gradient(150deg,#c38bff,#5b2b9a 60%,#22103d)', glyph: 'lotus' },
+  china:     { label: 'Культ Неба',   c: '#2ed6e6', g: 'linear-gradient(150deg,#2ed6e6,#0f6470 60%,#06272c)', glyph: 'heaven' },
+};
+const GLYPHS = {
+  church: 'M50 4v16M43 11h14M34 50Q34 30 50 26Q66 30 66 50M28 50h44M30 50v44h40V50M44 94V76a6 6 0 0 1 12 0v18M12 94h76',
+  mosque: 'M47 8a7 7 0 1 0 8 10a6 6 0 0 1-8-10zM28 56Q28 32 50 26Q72 32 72 56M24 56h52v38H24zM12 94V38M7 38h10M12 38v-12M88 94V38M83 38h10M88 38v-12M44 94V78a6 6 0 0 1 12 0v16M4 94h92',
+  star: 'M50 12L82 68H18zM50 88L18 32H82zM8 96h84',
+  stupa: 'M50 4v14M45 18h10M42 24h16M30 56Q30 30 50 28Q70 30 70 56M22 56h56M18 68h64M14 80h72M10 92h80',
+  shikhara: 'M50 4v8M38 94V44Q50 8 62 44v50M40 56h20M39 70h22M38 84h24M24 94V62Q30 50 38 54M76 94V62Q70 50 62 54M10 94h80',
+  torii: 'M8 22Q50 12 92 22M16 34h68M26 20v76M74 20v76M44 34v-14M56 34v-14M8 96h84',
+  dome: 'M50 8v12M30 52Q30 26 50 20Q70 26 70 52M24 52h52v42H24zM14 94V60M86 94V60M10 60h8M82 60h8M44 94V78a6 6 0 0 1 12 0v16M4 94h92',
+  lotus: 'M50 18Q63 44 50 72Q37 44 50 18zM50 72Q30 58 20 34Q42 40 50 72M50 72Q70 58 80 34Q58 40 50 72M50 72Q24 68 6 52Q30 48 50 72M50 72Q76 68 94 52Q70 48 50 72M12 86h76',
+  heaven: 'M50 4v8M30 26Q50 10 70 26zM36 26v10h28V26M22 46Q50 30 78 46zM28 46v12h44V46M14 70Q50 52 86 70zM22 70v18h56V70M6 94h88',
+};
+const REGIONS = {
+  'Европа': ['Ватикан','Франция','Испания','Германия','Италия','Великобритания','Венгрия','Чехия','Австрия','Украина','Россия'],
+  'Ближний Восток': ['Израиль','Иерусалим','Турция','Саудовская Аравия','ОАЭ','Иран','Сирия','Оман'],
+  'Кавказ и Средняя Азия': ['Грузия','Армения','Узбекистан'],
+  'Африка': ['Марокко','Египет','Тунис','Мали','Алжир'],
+  'Южная Азия': ['Индия','Пакистан','Шри-Ланка'],
+  'Восточная и Юго-Восточная Азия': ['Камбоджа','Индонезия','Мьянма','Таиланд','Китай','Япония','Южная Корея'],
+  'Америка': ['Мексика','Бразилия','США','Канада'],
+};
 // Английские названия городов: сайты бронирования плохо ищут по кириллице
 const CITY_EN = {"Иерусалим":"Jerusalem","Ватикан":"Rome","Париж":"Paris","Барселона":"Barcelona","Сантьяго-де-Компостела":"Santiago de Compostela","Кёльн":"Cologne","Венеция":"Venice","Милан":"Milan","Флоренция":"Florence","Лондон":"London","Кентербери":"Canterbury","Шартр":"Chartres","Москва":"Moscow","Мон-Сен-Мишель":"Mont-Saint-Michel","Стамбул":"Istanbul","Мекка":"Mecca","Медина":"Medina","Абу-Даби":"Abu Dhabi","Исфахан":"Isfahan","Шираз":"Shiraz","Касабланка":"Casablanca","Каир":"Cairo","Дамаск":"Damascus","Кайруан":"Kairouan","Кордова":"Cordoba","Дженне":"Djenne","Лахор":"Lahore","Будапешт":"Budapest","Прага":"Prague","Амритсар":"Amritsar","Варанаси":"Varanasi","Мадурай":"Madurai","Танджавур":"Thanjavur","Сиемреап":"Siem Reap","Прамбанан":"Yogyakarta","Бесаких":"Bali","Бодх-Гая":"Bodh Gaya","Боробудур":"Yogyakarta","Янгон":"Yangon","Бангкок":"Bangkok","Лхаса":"Lhasa","Нара":"Nara","Исэ":"Ise","Нью-Дели":"New Delhi","Вена":"Vienna","Ассизи":"Assisi","Рим":"Rome","Мехико":"Mexico City","Апаресида":"Aparecida","Солт-Лейк-Сити":"Salt Lake City","Вашингтон":"Washington","Нью-Йорк":"New York","Сент-Анн-де-Бопре":"Quebec City","Сергиев Посад":"Sergiev Posad","Санкт-Петербург":"Saint Petersburg","Киев":"Kyiv","Мцхета":"Mtskheta","Гегард":"Yerevan","Покр-Веди":"Yerevan","Фес":"Fes","Маскат":"Muscat","Джакарта":"Jakarta","Исламабад":"Islamabad","Дели":"Delhi","Самарканд":"Samarkand","Казань":"Kazan","Алжир":"Algiers","Коломбо":"Colombo","Джерба":"Djerba","Катра":"Katra","Прабхас-Патан":"Somnath","Пури":"Puri","Тируччираппалли":"Tiruchirappalli","Кедарнатх":"Kedarnath","Бхубанешвар":"Bhubaneswar","Пекин":"Beijing","Утай":"Wutai Shan","Киото":"Kyoto","Токио":"Tokyo","Кёнджу":"Gyeongju"};
+
+function faithOf(name, country) {
+  if (/мечет|Масджид|Купол Скалы|Мескита/i.test(name)) return 'islam';
+  if (/синагог|Стена Плача/i.test(name)) return 'judaism';
+  if (/Хармандир/.test(name)) return 'sikh';
+  if (/Лотоса/.test(name)) return 'bahai';
+  if (/Исэ|Инари|дзингу/.test(name)) return 'shinto';
+  if (/Храм Неба/.test(name)) return 'china';
+  if (/Будд|Ступа|Пагода|Махабодхи|Джоканг|Тодай|Фогуан|Киёмидзу|Сэнсо|Булгукса|Ват |Ангкор/.test(name)) return 'buddhism';
+  if (['Индия', 'Индонезия'].includes(country)) return 'hinduism';
+  return 'christian';
+}
+const regionOf = c => Object.keys(REGIONS).find(r => REGIONS[r].includes(c)) || 'Другие';
+const short = n => n.split(' — ')[0];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cityEn = o => CITY_EN[o.city] || o.city;
-const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-// Счётчики
-document.getElementById('sTotal').textContent = items.length;
-document.getElementById('sDone').textContent = items.filter(x => x.done).length;
-document.getElementById('sCountries').textContent = new Set(items.map(x => x.country)).size;
-
-// Карточка объекта
-function openPanel(o) {
-  const q = encodeURIComponent(o.city + ' ' + o.country);
-  const video = o.yt
-    ? `<iframe src="https://www.youtube.com/embed/${o.yt}" title="${esc(short(o.name))}" allowfullscreen loading="lazy"></iframe>`
-    : `<p style="color:var(--muted)">Фильм об этом объекте скоро выйдет. Подпишитесь, чтобы не пропустить.</p>`;
-  document.getElementById('panelBody').innerHTML = `
-    <h3>${esc(short(o.name))}</h3>
-    <div class="meta" style="color:var(--muted)">${esc(o.city)}, ${esc(o.country)} · ${o.lat.toFixed(4)}, ${o.lng.toFixed(4)}</div>
-    ${video}
-    <div class="btns">
-      <a class="primary" href="https://www.youtube.com/@MirCountries/search?query=${encodeURIComponent(short(o.name))}" target="_blank" rel="noopener">Смотреть на YouTube</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=${o.lat},${o.lng}" target="_blank" rel="noopener">На карте</a>
-      <a href="https://www.trip.com/hotels/list?keyword=${encodeURIComponent(cityEn(o))}" target="_blank" rel="sponsored noopener">🏨 Отели рядом</a>
-      <a href="https://www.getyourguide.com/s/?q=${encodeURIComponent(cityEn(o))}" target="_blank" rel="sponsored noopener">🎟 Экскурсии</a>
-    </div>
-    <p style="color:var(--muted);font-size:12px;margin:6px 0 0">Партнёрские ссылки: при бронировании проект получает комиссию, для вас цена не меняется.</p>`;
-  document.getElementById('panel').classList.add('open');
-  if (window.world) world.pointOfView({ lat: o.lat, lng: o.lng, altitude: 1.2 }, 1200);
-}
-function closePanel() { document.getElementById('panel').classList.remove('open'); }
-
-// Глобус
-const el = document.getElementById('globe');
-window.world = Globe()(el)
-  .globeImageUrl('/assets/earth-blue-marble.jpg')
-  .bumpImageUrl('/assets/earth-topology.png')
-  .backgroundColor('rgba(0,0,0,0)')
-  .atmosphereColor('#9fd3ff').atmosphereAltitude(0.22)
-  .pointsData(items)
-  .pointLat('lat').pointLng('lng')
-  .pointColor(d => d.done ? '#ffb000' : '#e0245e')
-  .pointAltitude(d => d.done ? 0.12 : 0.04)
-  .pointRadius(d => d.done ? 0.55 : 0.32)
-  .pointLabel(d => `<div style="background:#111a2e;border:1px solid #e8c468;padding:6px 8px;border-radius:8px;color:#eef2fb">${esc(short(d.name))}<br><small>${esc(d.city)}, ${esc(d.country)}${d.done ? ' · 🎬 фильм готов' : ''}</small></div>`)
-  .onPointClick(openPanel)
-  .ringsData(items.filter(x => x.done))
-  .ringLat('lat').ringLng('lng').ringColor(() => t => `rgba(255,176,0,${1 - t})`)
-  .ringMaxRadius(3).ringPropagationSpeed(1.5).ringRepeatPeriod(1600);
-world.controls().autoRotate = true;
-world.controls().autoRotateSpeed = 0.45;
-world.pointOfView({ lat: 38, lng: 30, altitude: 2.1 });
-const fit = () => world.width(el.clientWidth).height(el.clientHeight);
-window.addEventListener('resize', fit); fit();
-
-// Список и фильтры
-const grid = document.getElementById('grid');
-const countrySel = document.getElementById('country');
-[...new Set(items.map(x => x.country))].sort((a, b) => a.localeCompare(b, 'ru')).forEach(c => {
-  const o = document.createElement('option'); o.value = c; o.textContent = c; countrySel.appendChild(o);
+const items = (window.MC_OBJECTS || []).map((r, i) => {
+  const o = { i, name: r[0], country: r[1], city: r[2], lat: r[3], lng: r[4], done: r[5] === 'DONE', yt: r[6] || '' };
+  o.faith = faithOf(o.name, o.country);
+  o.region = regionOf(o.country);
+  return o;
 });
-function render() {
-  const q = document.getElementById('q').value.trim().toLowerCase();
-  const c = countrySel.value, s = document.getElementById('status').value;
-  const list = items.filter(x =>
-    (!q || (x.name + ' ' + x.country + ' ' + x.city).toLowerCase().includes(q)) &&
-    (!c || x.country === c) &&
-    (!s || (s === 'DONE' ? x.done : !x.done)));
-  grid.innerHTML = list.map(x => `
-    <div class="card" data-i="${x.i}">
-      <h3>${esc(short(x.name))}</h3>
-      <div class="meta">${esc(x.city)}, ${esc(x.country)}</div>
-      <span class="badge ${x.done ? 'done' : 'soon'}">${x.done ? '🎬 Фильм готов' : 'Скоро'}</span>
-    </div>`).join('') || '<p class="sub">Ничего не найдено.</p>';
+const F = o => FAITHS[o.faith];
+const num = o => String(o.i + 1).padStart(2, '0');
+const glyph = o => `<svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${GLYPHS[F(o).glyph]}"/></svg>`;
+const thumb = o => `https://i.ytimg.com/vi/${o.yt}/hqdefault.jpg`;
+const pin = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+
+// ---------- Счётчики ----------
+const counters = {
+  sTotal: items.length,
+  sCountries: new Set(items.map(x => x.country === 'Иерусалим' ? 'Израиль' : x.country)).size,
+  sFaiths: new Set(items.map(x => x.faith)).size,
+  sDone: items.filter(x => x.done).length,
+};
+function animateCount(el, to) {
+  const t0 = performance.now(), dur = 1400;
+  const step = t => { const p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
 }
-grid.addEventListener('click', e => { const c = e.target.closest('.card'); if (c) { openPanel(items[+c.dataset.i]); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
-['q', 'country', 'status'].forEach(id => document.getElementById(id).addEventListener('input', render));
+Object.entries(counters).forEach(([id, v]) => { const el = document.getElementById(id); el.textContent = v; el.dataset.to = v; });
+
+// ---------- Бегущая строка ----------
+const names = items.map(o => `<span>${esc(short(o.name).replace(/\s*\(.*\)/, ''))}</span>`).join('');
+document.getElementById('marquee').innerHTML = names + names;
+
+// ---------- Премьеры ----------
+function filmCard(o, label) {
+  if (o.done) {
+    return `<button class="film" type="button" data-i="${o.i}" aria-label="Смотреть: ${esc(short(o.name))}">
+      <img src="${thumb(o)}" alt="" loading="lazy" onerror="this.remove()">
+      <span class="tag"><span class="pill done">● Фильм вышел</span></span>
+      <span class="play"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      <span class="meta"><h3>${esc(short(o.name))}</h3><span class="loc">${esc(o.city)}, ${esc(o.country)}</span></span>
+    </button>`;
+  }
+  return `<button class="film upcoming" type="button" data-i="${o.i}" aria-label="${esc(short(o.name))} — скоро">
+    <span class="art" style="--g:${F(o).g}">${glyph(o)}<span class="num">№ ${num(o)}</span></span>
+    <span class="tag"><span class="pill soon">${label}</span></span>
+    <span class="meta"><h3>${esc(short(o.name))}</h3><span class="loc">${esc(o.city)}, ${esc(o.country)}</span></span>
+  </button>`;
+}
+const done = items.filter(x => x.done);
+const recent = done.slice(-8).reverse();
+const next = items.filter(x => !x.done).slice(0, Math.max(2, 5 - recent.length));
+document.getElementById('films-grid').innerHTML =
+  recent.map(o => filmCard(o)).join('') +
+  next.map((o, k) => filmCard(o, k === 0 ? '◆ Премьера' : 'Скоро')).join('');
+
+// ---------- Традиции ----------
+const fWrap = document.getElementById('faiths');
+let faithFilter = '';
+Object.entries(FAITHS).forEach(([k, f]) => {
+  const n = items.filter(x => x.faith === k).length;
+  if (!n) return;
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'faith'; b.dataset.faith = k; b.setAttribute('aria-pressed', 'false');
+  b.style.setProperty('--c', f.c); b.style.setProperty('--g', f.g);
+  b.innerHTML = `<span class="sw"></span>${f.label} <b>${n}</b>`;
+  b.onclick = () => {
+    faithFilter = faithFilter === k ? '' : k;
+    fWrap.querySelectorAll('.faith').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.faith === faithFilter)));
+    shown = PAGE; render();
+    if (faithFilter) document.getElementById('objects').scrollIntoView({ behavior: 'smooth' });
+  };
+  fWrap.appendChild(b);
+});
+
+// ---------- Каталог ----------
+const PAGE = 12;
+let shown = PAGE, statusFilter = '';
+const grid = document.getElementById('grid');
+const regionSel = document.getElementById('region');
+Object.keys(REGIONS).forEach(r => { const o = document.createElement('option'); o.value = r; o.textContent = r; regionSel.appendChild(o); });
+function card(o) {
+  const media = o.done ? `<img src="${thumb(o)}" alt="" loading="lazy" onerror="this.remove()">` : `${glyph(o)}<span class="num">№ ${num(o)}</span>`;
+  return `<button class="card" type="button" data-i="${o.i}" style="--c:${F(o).c}">
+    <span class="art" style="--g:${F(o).g}">${media}
+      <span class="pill ${o.done ? 'done' : 'soon'}">${o.done ? '● Фильм вышел' : 'Скоро'}</span>
+      <span class="ft">${F(o).label}</span></span>
+    <span class="body"><h3>${esc(short(o.name))}</h3><span class="loc">${pin}${esc(o.city)}, ${esc(o.country)}</span></span>
+  </button>`;
+}
+function filtered() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const r = regionSel.value;
+  return items.filter(x =>
+    (!q || (x.name + ' ' + x.country + ' ' + x.city + ' ' + F(x).label).toLowerCase().includes(q)) &&
+    (!r || x.region === r) && (!faithFilter || x.faith === faithFilter) &&
+    (!statusFilter || (statusFilter === 'DONE' ? x.done : !x.done)));
+}
+function render() {
+  const list = filtered();
+  grid.innerHTML = list.slice(0, shown).map(card).join('') || '<p class="empty">Ничего не найдено — попробуйте другой запрос.</p>';
+  document.getElementById('moreBtn').style.display = list.length > shown ? '' : 'none';
+}
+document.getElementById('moreBtn').onclick = () => { shown += PAGE; render(); };
+document.getElementById('q').addEventListener('input', () => { shown = PAGE; render(); });
+regionSel.addEventListener('input', () => { shown = PAGE; render(); });
+document.querySelectorAll('.seg button').forEach(b => b.onclick = () => {
+  statusFilter = b.dataset.status;
+  document.querySelectorAll('.seg button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  shown = PAGE; render();
+});
 render();
+document.addEventListener('click', e => {
+  const el = e.target.closest('.film, .card');
+  if (el) openModal(items[+el.dataset.i]);
+});
+
+// ---------- Окно объекта ----------
+const modal = document.getElementById('modal');
+function openModal(o) {
+  const f = F(o);
+  const media = o.done
+    ? `<iframe src="https://www.youtube.com/embed/${o.yt}?autoplay=1&rel=0&modestbranding=1" title="${esc(short(o.name))}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
+    : `<div class="art" style="--g:${f.g}">${glyph(o)}<span class="num">№ ${num(o)}</span></div><p class="soon">🎬 Фильм об этой святыне скоро выйдет. Подпишитесь, чтобы увидеть премьеру первыми.</p>`;
+  const watch = o.done ? `https://www.youtube.com/shorts/${o.yt}` : 'https://www.youtube.com/@MirCountries?sub_confirmation=1';
+  document.getElementById('mbox').innerHTML = `
+    <div class="mmedia${o.done ? '' : ' soon-media'}">${media}</div>
+    <div class="minfo">
+      <span class="kicker" style="color:${f.c};margin:0">${f.label} · № ${num(o)}</span>
+      <h3 id="mTitle">${esc(short(o.name))}</h3>
+      <div class="facts">
+        <div class="fact"><span>Страна</span><b>${esc(o.country)}</b></div>
+        <div class="fact"><span>Город</span><b>${esc(o.city)}</b></div>
+        <div class="fact"><span>Регион</span><b>${esc(o.region)}</b></div>
+        <div class="fact"><span>Координаты</span><b>${o.lat.toFixed(3)}, ${o.lng.toFixed(3)}</b></div>
+      </div>
+      <div class="mactions">
+        <a class="btn primary sm" href="https://www.trip.com/hotels/list?keyword=${encodeURIComponent(cityEn(o))}" target="_blank" rel="sponsored noopener">🏨 Отели рядом</a>
+        <a class="btn primary sm" href="https://www.getyourguide.com/s/?q=${encodeURIComponent(cityEn(o))}" target="_blank" rel="sponsored noopener">🎟 Экскурсии</a>
+        <a class="btn sm" href="${watch}" target="_blank" rel="noopener">${o.done ? '▶ Смотреть на YouTube' : '🔔 Подписаться'}</a>
+        <a class="btn sm" href="https://www.google.com/maps/search/?api=1&query=${o.lat},${o.lng}" target="_blank" rel="noopener">📍 На карте</a>
+        <button class="btn sm" type="button" onclick="showOnGlobe(${o.i})">🌍 На глобусе</button>
+      </div>
+      <p class="disclaimer">Партнёрские ссылки: при бронировании проект получает комиссию, для вас цена не меняется.</p>
+    </div>`;
+  if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+}
+function closeModal() { document.getElementById('mbox').innerHTML = ''; modal.close ? modal.close() : modal.removeAttribute('open'); }
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+modal.addEventListener('close', () => { document.getElementById('mbox').innerHTML = ''; });
+function showOnGlobe(i) {
+  closeModal();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const o = items[i];
+  if (window.world) { world.controls().autoRotate = false; world.pointOfView({ lat: o.lat, lng: o.lng, altitude: 1.1 }, 1600); }
+}
+
+// ---------- Глобус ----------
+const gEl = document.getElementById('globe');
+try {
+  window.world = Globe()(gEl)
+    .globeImageUrl('/assets/earth-blue-marble.jpg')
+    .bumpImageUrl('/assets/earth-topology.png')
+    .backgroundColor('rgba(0,0,0,0)')
+    .showAtmosphere(true).atmosphereColor('#7fd4ff').atmosphereAltitude(0.25)
+    .pointsData(items)
+    .pointLat('lat').pointLng('lng')
+    .pointColor(d => d.done ? '#ffc65c' : F(d).c)
+    .pointAltitude(d => d.done ? 0.16 : 0.05)
+    .pointRadius(d => d.done ? 0.6 : 0.36)
+    .pointsMerge(false)
+    .pointLabel(d => `<div class="globe-tip"><b>${esc(short(d.name))}</b><br><small>${esc(d.city)}, ${esc(d.country)} · ${F(d).label}${d.done ? ' · 🎬 фильм вышел' : ''}</small></div>`)
+    .onPointClick(openModal)
+    .ringsData(items.filter(x => x.done))
+    .ringLat('lat').ringLng('lng').ringColor(() => t => `rgba(255,198,92,${1 - t})`)
+    .ringMaxRadius(4).ringPropagationSpeed(1.6).ringRepeatPeriod(1400);
+  world.controls().autoRotate = true;
+  world.controls().autoRotateSpeed = 0.5;
+  world.controls().enableZoom = false;
+  world.pointOfView({ lat: 30, lng: 35, altitude: 2.15 });
+  const fit = () => world.width(gEl.clientWidth).height(gEl.clientHeight);
+  new ResizeObserver(fit).observe(gEl); fit();
+  gEl.addEventListener('pointerdown', () => { world.controls().autoRotate = false; });
+} catch (e) { gEl.innerHTML = '<p class="empty">3D-глобус не поддерживается этим браузером.</p>'; }
+
+// ---------- Анимации появления ----------
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add('in');
+  e.target.querySelectorAll('[data-count]').forEach(el => animateCount(el, +el.dataset.to));
+  io.unobserve(e.target);
+}), { threshold: .12 }) : null;
+document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
 </script>
 </body>
 </html>
