@@ -111,8 +111,10 @@ function openPanel(o) {
     <div class="btns">
       <a class="primary" href="https://www.youtube.com/@MirCountries/search?query=${encodeURIComponent(short(o.name))}" target="_blank" rel="noopener">Смотреть на YouTube</a>
       <a href="https://www.google.com/maps/search/?api=1&query=${o.lat},${o.lng}" target="_blank" rel="noopener">На карте</a>
-      <a href="https://www.google.com/search?q=${encodeURIComponent('отели рядом ' + short(o.name))}" target="_blank" rel="noopener">Отели рядом</a>
-    </div>`;
+      <a href="https://www.trip.com/hotels/list?keyword=${encodeURIComponent(o.city)}" target="_blank" rel="sponsored noopener">🏨 Отели рядом</a>
+      <a href="https://www.getyourguide.com/s/?q=${encodeURIComponent(short(o.name))}" target="_blank" rel="sponsored noopener">🎟 Экскурсии</a>
+    </div>
+    <p style="color:var(--muted);font-size:12px;margin:6px 0 0">Партнёрские ссылки: при бронировании проект получает комиссию, для вас цена не меняется.</p>`;
   document.getElementById('panel').classList.add('open');
   if (window.world) world.pointOfView({ lat: o.lat, lng: o.lng, altitude: 1.2 }, 1200);
 }
