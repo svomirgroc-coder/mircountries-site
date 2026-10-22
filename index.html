@@ -91,6 +91,9 @@ const items = (window.MC_OBJECTS || []).map((r, i) => ({
   i, name: r[0], country: r[1], city: r[2], lat: r[3], lng: r[4], done: r[5] === 'DONE', yt: r[6] || ''
 }));
 const short = n => n.split(' — ')[0];
+// Английские названия городов: сайты бронирования плохо ищут по кириллице
+const CITY_EN = {"Иерусалим":"Jerusalem","Ватикан":"Rome","Париж":"Paris","Барселона":"Barcelona","Сантьяго-де-Компостела":"Santiago de Compostela","Кёльн":"Cologne","Венеция":"Venice","Милан":"Milan","Флоренция":"Florence","Лондон":"London","Кентербери":"Canterbury","Шартр":"Chartres","Москва":"Moscow","Мон-Сен-Мишель":"Mont-Saint-Michel","Стамбул":"Istanbul","Мекка":"Mecca","Медина":"Medina","Абу-Даби":"Abu Dhabi","Исфахан":"Isfahan","Шираз":"Shiraz","Касабланка":"Casablanca","Каир":"Cairo","Дамаск":"Damascus","Кайруан":"Kairouan","Кордова":"Cordoba","Дженне":"Djenne","Лахор":"Lahore","Будапешт":"Budapest","Прага":"Prague","Амритсар":"Amritsar","Варанаси":"Varanasi","Мадурай":"Madurai","Танджавур":"Thanjavur","Сиемреап":"Siem Reap","Прамбанан":"Yogyakarta","Бесаких":"Bali","Бодх-Гая":"Bodh Gaya","Боробудур":"Yogyakarta","Янгон":"Yangon","Бангкок":"Bangkok","Лхаса":"Lhasa","Нара":"Nara","Исэ":"Ise","Нью-Дели":"New Delhi","Вена":"Vienna","Ассизи":"Assisi","Рим":"Rome","Мехико":"Mexico City","Апаресида":"Aparecida","Солт-Лейк-Сити":"Salt Lake City","Вашингтон":"Washington","Нью-Йорк":"New York","Сент-Анн-де-Бопре":"Quebec City","Сергиев Посад":"Sergiev Posad","Санкт-Петербург":"Saint Petersburg","Киев":"Kyiv","Мцхета":"Mtskheta","Гегард":"Yerevan","Покр-Веди":"Yerevan","Фес":"Fes","Маскат":"Muscat","Джакарта":"Jakarta","Исламабад":"Islamabad","Дели":"Delhi","Самарканд":"Samarkand","Казань":"Kazan","Алжир":"Algiers","Коломбо":"Colombo","Джерба":"Djerba","Катра":"Katra","Прабхас-Патан":"Somnath","Пури":"Puri","Тируччираппалли":"Tiruchirappalli","Кедарнатх":"Kedarnath","Бхубанешвар":"Bhubaneswar","Пекин":"Beijing","Утай":"Wutai Shan","Киото":"Kyoto","Токио":"Tokyo","Кёнджу":"Gyeongju"};
+const cityEn = o => CITY_EN[o.city] || o.city;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 // Счётчики
@@ -111,8 +114,8 @@ function openPanel(o) {
     <div class="btns">
       <a class="primary" href="https://www.youtube.com/@MirCountries/search?query=${encodeURIComponent(short(o.name))}" target="_blank" rel="noopener">Смотреть на YouTube</a>
       <a href="https://www.google.com/maps/search/?api=1&query=${o.lat},${o.lng}" target="_blank" rel="noopener">На карте</a>
-      <a href="https://www.trip.com/hotels/list?keyword=${encodeURIComponent(o.city)}" target="_blank" rel="sponsored noopener">🏨 Отели рядом</a>
-      <a href="https://www.getyourguide.com/s/?q=${encodeURIComponent(short(o.name))}" target="_blank" rel="sponsored noopener">🎟 Экскурсии</a>
+      <a href="https://www.trip.com/hotels/list?keyword=${encodeURIComponent(cityEn(o))}" target="_blank" rel="sponsored noopener">🏨 Отели рядом</a>
+      <a href="https://www.getyourguide.com/s/?q=${encodeURIComponent(cityEn(o))}" target="_blank" rel="sponsored noopener">🎟 Экскурсии</a>
     </div>
     <p style="color:var(--muted);font-size:12px;margin:6px 0 0">Партнёрские ссылки: при бронировании проект получает комиссию, для вас цена не меняется.</p>`;
   document.getElementById('panel').classList.add('open');
