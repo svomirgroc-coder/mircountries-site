@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MirCountries — достопримечательности мира на 3D-глобусе</title>
+<meta name="description" content="MirCountries: короткие кинематографические фильмы о главных достопримечательностях мира. Облёт с дрона, тур по интерьеру и рассказ гида на нескольких языках. Interactive 3D globe of world landmarks.">
+<link rel="canonical" href="https://www.mircountries.com/">
+<meta property="og:title" content="MirCountries — достопримечательности мира на 3D-глобусе">
+<meta property="og:description" content="Кинематографические фильмы о главных достопримечательностях мира: дрон снаружи, тур внутри, рассказ гида.">
+<meta property="og:url" content="https://www.mircountries.com/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/style.css">
+<!-- Travelpayouts Drive (marker 589223) -->
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.setAttribute("data-cmp-ab","2");
+      script.src = 'https://tpembars.com/NTg5Mjlz.js?t=589223';
+      document.head.appendChild(script);
+  })();
+</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">Mir<span>Countries</span></a>
+  <nav><a href="#objects">Объекты</a><a class="opt" href="#about">О проекте</a><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Достопримечательности <b>мира</b></h1>
+      <p>Короткие кинематографические фильмы: облёт с дрона снаружи, тур по интерьеру и рассказ гида. Вращайте глобус и нажмите на точку, чтобы открыть объект.</p>
+      <p style="font-size:15px">Short cinematic films about the world's most important landmarks and sacred sites — drone flight, interior tour and a narrated guide in several languages.</p>
+      <div class="stats">
+        <div class="stat"><b id="sTotal">0</b><span>объектов на карте</span></div>
+        <div class="stat"><b id="sDone">0</b><span>фильмов готово</span></div>
+        <div class="stat"><b id="sCountries">0</b><span>стран</span></div>
+      </div>
+      <div class="btns">
+        <a class="primary" href="https://www.youtube.com/@MirCountries" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@mircountries" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/mircountries" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61595357645916" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div>
+      <div id="globe" role="img" aria-label="3D-глобус с достопримечательностями"></div>
+      <div class="hint">🟠 фильм готов · 🔴 скоро · перетаскивайте и приближайте колесом мыши</div>
+    </div>
+  </div>
+
+  <section id="objects">
+    <h2>Все объекты</h2>
+    <p class="sub">Поиск по названию, стране или городу.</p>
+    <div class="filters">
+      <input id="q" type="search" placeholder="Например: Париж, мечеть, Индия…">
+      <select id="country"><option value="">Все страны</option></select>
+      <select id="status"><option value="">Все</option><option value="DONE">Фильм готов</option><option value="SOON">Скоро</option></select>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <h2>MirCountries Publisher — about this app</h2>
+      <p>MirCountries Publisher is the internal publishing app of the MirCountries project. MirCountries creates short cinematic films about the world's most important landmarks, sacred sites and cultural heritage (exterior drone flight, interior tour and narration in several languages).</p>
+      <p>What the app does: after our automation (n8n Cloud) produces a video, MirCountries Publisher uploads it to our own YouTube channel @MirCountries using the YouTube Data API (permission "youtube.upload" only), together with the title, description, language and privacy setting. The app also publishes the same videos to our own TikTok account @mircountries.</p>
+      <p>Who uses it: only the owner of the MirCountries channels. The app is not offered to the public, has no other users and does not access, read or store any data of other people.</p>
+      <p>Privacy Policy: <a href="/privacy-policy">www.mircountries.com/privacy-policy</a> · Terms of Service: <a href="/terms-of-service">www.mircountries.com/terms-of-service</a> · Contact: <a href="mailto:mircountries@gmail.com">mircountries@gmail.com</a></p>
+      <p style="color:var(--muted)">MirCountries Publisher — внутреннее приложение проекта MirCountries: загружает наши собственные ролики о достопримечательностях на наш канал YouTube @MirCountries и в TikTok @mircountries. Приложением пользуется только владелец каналов; данные других людей не собираются.</p>
+    </div>
+  </section>
+</main>
+
+<aside class="panel" id="panel" aria-live="polite">
+  <button class="close" aria-label="Закрыть" onclick="closePanel()">×</button>
+  <div id="panelBody"></div>
+</aside>
+
+<footer><div class="wrap">
+  © MirCountries · <a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="mailto:mircountries@gmail.com">mircountries@gmail.com</a>
+</div></footer>
+
+<script src="/objects.js"></script>
+<script src="/assets/globe.gl.min.js"></script>
+<script>
+const items = (window.MC_OBJECTS || []).map((r, i) => ({
+  i, name: r[0], country: r[1], city: r[2], lat: r[3], lng: r[4], done: r[5] === 'DONE', yt: r[6] || ''
+}));
+const short = n => n.split(' — ')[0];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// Счётчики
+document.getElementById('sTotal').textContent = items.length;
+document.getElementById('sDone').textContent = items.filter(x => x.done).length;
+document.getElementById('sCountries').textContent = new Set(items.map(x => x.country)).size;
+
+// Карточка объекта
+function openPanel(o) {
+  const q = encodeURIComponent(o.city + ' ' + o.country);
+  const video = o.yt
+    ? `<iframe src="https://www.youtube.com/embed/${o.yt}" title="${esc(short(o.name))}" allowfullscreen loading="lazy"></iframe>`
+    : `<p style="color:var(--muted)">Фильм об этом объекте скоро выйдет. Подпишитесь, чтобы не пропустить.</p>`;
+  document.getElementById('panelBody').innerHTML = `
+    <h3>${esc(short(o.name))}</h3>
+    <div class="meta" style="color:var(--muted)">${esc(o.city)}, ${esc(o.country)} · ${o.lat.toFixed(4)}, ${o.lng.toFixed(4)}</div>
+    ${video}
+    <div class="btns">
+      <a class="primary" href="https://www.youtube.com/@MirCountries/search?query=${encodeURIComponent(short(o.name))}" target="_blank" rel="noopener">Смотреть на YouTube</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=${o.lat},${o.lng}" target="_blank" rel="noopener">На карте</a>
+      <a href="https://www.google.com/search?q=${encodeURIComponent('отели рядом ' + short(o.name))}" target="_blank" rel="noopener">Отели рядом</a>
+    </div>`;
+  document.getElementById('panel').classList.add('open');
+  if (window.world) world.pointOfView({ lat: o.lat, lng: o.lng, altitude: 1.2 }, 1200);
+}
+function closePanel() { document.getElementById('panel').classList.remove('open'); }
+
+// Глобус
+const el = document.getElementById('globe');
+window.world = Globe()(el)
+  .globeImageUrl('/assets/earth-blue-marble.jpg')
+  .bumpImageUrl('/assets/earth-topology.png')
+  .backgroundColor('rgba(0,0,0,0)')
+  .atmosphereColor('#9fd3ff').atmosphereAltitude(0.22)
+  .pointsData(items)
+  .pointLat('lat').pointLng('lng')
+  .pointColor(d => d.done ? '#ffb000' : '#e0245e')
+  .pointAltitude(d => d.done ? 0.12 : 0.04)
+  .pointRadius(d => d.done ? 0.55 : 0.32)
+  .pointLabel(d => `<div style="background:#111a2e;border:1px solid #e8c468;padding:6px 8px;border-radius:8px;color:#eef2fb">${esc(short(d.name))}<br><small>${esc(d.city)}, ${esc(d.country)}${d.done ? ' · 🎬 фильм готов' : ''}</small></div>`)
+  .onPointClick(openPanel)
+  .ringsData(items.filter(x => x.done))
+  .ringLat('lat').ringLng('lng').ringColor(() => t => `rgba(255,176,0,${1 - t})`)
+  .ringMaxRadius(3).ringPropagationSpeed(1.5).ringRepeatPeriod(1600);
+world.controls().autoRotate = true;
+world.controls().autoRotateSpeed = 0.45;
+world.pointOfView({ lat: 38, lng: 30, altitude: 2.1 });
+const fit = () => world.width(el.clientWidth).height(el.clientHeight);
+window.addEventListener('resize', fit); fit();
+
+// Список и фильтры
+const grid = document.getElementById('grid');
+const countrySel = document.getElementById('country');
+[...new Set(items.map(x => x.country))].sort((a, b) => a.localeCompare(b, 'ru')).forEach(c => {
+  const o = document.createElement('option'); o.value = c; o.textContent = c; countrySel.appendChild(o);
+});
+function render() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const c = countrySel.value, s = document.getElementById('status').value;
+  const list = items.filter(x =>
+    (!q || (x.name + ' ' + x.country + ' ' + x.city).toLowerCase().includes(q)) &&
+    (!c || x.country === c) &&
+    (!s || (s === 'DONE' ? x.done : !x.done)));
+  grid.innerHTML = list.map(x => `
+    <div class="card" data-i="${x.i}">
+      <h3>${esc(short(x.name))}</h3>
+      <div class="meta">${esc(x.city)}, ${esc(x.country)}</div>
+      <span class="badge ${x.done ? 'done' : 'soon'}">${x.done ? '🎬 Фильм готов' : 'Скоро'}</span>
+    </div>`).join('') || '<p class="sub">Ничего не найдено.</p>';
+}
+grid.addEventListener('click', e => { const c = e.target.closest('.card'); if (c) { openPanel(items[+c.dataset.i]); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+['q', 'country', 'status'].forEach(id => document.getElementById(id).addEventListener('input', render));
+render();
+</script>
+</body>
+</html>

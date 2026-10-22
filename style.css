@@ -1,0 +1,61 @@
+:root{
+  --bg:#0b1220; --bg2:#111a2e; --card:#151f36; --line:#24304d;
+  --text:#eef2fb; --muted:#a3adc4; --gold:#e8c468; --gold2:#f5dd9a; --blue:#5aa9ff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+a{color:var(--gold2)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:800;font-size:20px;letter-spacing:.3px;color:var(--text);text-decoration:none}
+.logo span{color:var(--gold)}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:15px}
+nav a:hover{color:var(--text)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:24px;align-items:center;padding:40px 0 10px}
+.hero h1{font-size:44px;line-height:1.1;margin:0 0 14px}
+.hero h1 b{color:var(--gold)}
+.hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
+.stats{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:120px}
+.stat b{display:block;font-size:26px;color:var(--gold)}
+.stat span{color:var(--muted);font-size:13px}
+.btns a{display:inline-block;margin:4px 8px 4px 0;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--line);color:var(--text);background:var(--bg2)}
+.btns a.primary{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+#globe{height:560px;width:100%;min-width:0;position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#dff1ff 0%,#9fd0f5 45%,#5aa0dd 100%)}
+.hint{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+section{padding:34px 0}
+h2{font-size:28px;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.filters input,.filters select{background:var(--bg2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:15px;min-width:220px;flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.card h3{font-size:16px;margin:0 0 6px}
+.card .meta{color:var(--muted);font-size:13px}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;margin-top:8px;font-weight:700}
+.badge.done{background:#1f4d2e;color:#9ff0b7}
+.badge.soon{background:#3a3220;color:var(--gold2)}
+.panel{position:fixed;right:16px;bottom:16px;width:min(440px,calc(100% - 32px));max-height:80vh;overflow:auto;background:var(--bg2);border:1px solid var(--gold);border-radius:16px;padding:16px;z-index:30;display:none;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.panel.open{display:block}
+.panel h3{margin:0 24px 6px 0}
+.panel .close{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer}
+.panel iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px;margin:10px 0}
+.about{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.about h2{color:var(--gold)}
+.follow{display:flex;gap:10px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:14px}
+footer a{color:var(--muted);margin-right:14px}
+.doc{max-width:860px;margin:0 auto;padding:30px 16px 60px}
+.doc h1{font-size:34px}
+.doc h2{font-size:20px;margin-top:26px;color:var(--gold2)}
+.doc p,.doc li{color:#d4dbec}
+@media (max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .hero h1{font-size:32px}
+  #globe{height:420px}
+  nav a{margin-left:10px;font-size:14px}
+  nav a.opt{display:none}
+  body{overflow-x:hidden}
+}
