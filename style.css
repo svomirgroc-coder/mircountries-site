@@ -134,6 +134,23 @@ h2.title em{font-style:normal;background:var(--grad-aurora);-webkit-background-c
 .step h3{font-size:20px;margin:0 0 8px}
 .step p{margin:0;color:var(--muted);font-size:15px}
 
+/* Категории */
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(165px,44%),1fr));gap:14px;margin-bottom:26px}
+.cat{position:relative;overflow:hidden;text-align:left;cursor:pointer;min-height:168px;padding:18px;border-radius:var(--radius);border:1px solid var(--line);background:var(--g);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s;isolation:isolate}
+.cat::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 85% 0%,rgba(255,255,255,.3),transparent 50%),linear-gradient(180deg,transparent 30%,rgba(5,8,22,.55))}
+.cat .glyph{position:absolute;right:-8px;top:-6px;width:96px;opacity:.35;z-index:-1}
+.cat b{font-family:var(--serif);font-size:20px;line-height:1.15}
+.cat small{color:rgba(255,255,255,.78);font-size:12.5px;line-height:1.35}
+.cat .cnt{align-self:flex-start;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(5,8,22,.45);border:1px solid rgba(255,255,255,.25);margin-bottom:auto}
+.cat:hover:not(:disabled),.cat[aria-pressed="true"]{transform:translateY(-4px);box-shadow:0 24px 50px -20px var(--c);border-color:rgba(255,255,255,.55)}
+.cat[aria-pressed="true"]{outline:2px solid #fff;outline-offset:2px}
+.cat.soon{filter:saturate(.6) brightness(.8);cursor:default}
+.cat:disabled{color:#fff;opacity:1}
+@media(max-width:600px){.cat{min-height:150px;padding:14px}.cat b{font-size:17px}.cat .glyph{width:70px}}
+.faith-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.faith-row[hidden]{display:none}
+.faith-label{color:var(--muted);font-size:14px;font-weight:600}
+
 /* Традиции */
 .faiths{display:flex;flex-wrap:wrap;gap:10px}
 .faith{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);cursor:pointer;font-size:14.5px;font-weight:600;color:var(--text);transition:all .2s}
