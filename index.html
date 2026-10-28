@@ -475,7 +475,7 @@ try {
   world.controls().autoRotate = true;
   world.controls().autoRotateSpeed = 0.5;
   world.controls().enableZoom = false;
-  world.pointOfView({ lat: 30, lng: 35, altitude: 2.15 });
+  world.pointOfView({ lat: 30, lng: 35, altitude: 1.8 });
   const fit = () => world.width(gEl.clientWidth).height(gEl.clientHeight);
   new ResizeObserver(fit).observe(gEl); fit();
   gEl.addEventListener('pointerdown', () => { world.controls().autoRotate = false; });
