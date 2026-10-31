@@ -1,0 +1,27 @@
+name: render
+on:
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "JSON задания рендера"
+        required: true
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Render
+        env:
+          JOB: ${{ inputs.job }}
+        run: python3 render/render.py
+      - name: Publish release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB: ${{ inputs.job }}
+        run: |
+          TAG=$(python3 -c "import json,os;print(json.loads(os.environ['JOB'])['tag'])")
+          gh release create "$TAG" out/* --title "$TAG" --notes "render output" --repo "$GITHUB_REPOSITORY"
